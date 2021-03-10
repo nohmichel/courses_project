@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Delete a courset</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+</head>
+<body>
+	<div id="wrapper">
+		<form action="/" method="POST">
+	 		{% csrf_token %}
+		<h1>Are you sure you want to delete the following course?</h1>
+		<div id="table">
+			<table>
+				<tbody>
+					<tr>
+						<td>Name:</td>
+						<td class="desc">{{one_course.name}}</td>
+					</tr>		
+					<tr>
+						<td>Description:</td>
+						<td class="desc">{{one_course.description}}</td>
+					</tr>
+				</tbody>			
+			</table>
+		</form>
+		</div>	
+		<div id="select">
+			<div class="buttons">
+				<form action="/" method="POST">
+			 		{% csrf_token %}	
+					<input type="submit" value="No" class="button">
+					<a href="{% url 'index' %}"></a></p>
+				</form>
+			</div>
+			<div class="buttons">	
+				<form action="{% url 'delete_course' course_id=one_course.id %}" method="POST">
+					{% csrf_token %}	
+				<input type="submit" value="Yes! I want to delete this" class="button" id="redb" name="delete_course"></a>
+				</form>
+			</div>
+		</div>	
+	</div>			
+</body>
+</html>

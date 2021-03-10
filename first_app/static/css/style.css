@@ -1,0 +1,75 @@
+body{
+	padding: 50px 100px;
+}
+
+#wrapper{
+	width: 1000px;
+	margin: auto;
+	font-family: Geneva, Verdana, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+}
+
+label{
+ 	vertical-align: top;
+}
+
+#name{
+	margin-left: 42px;
+	width: 397px;
+	height: 30px;
+	border-width: medium;
+}
+
+textarea {
+	border-width: medium;
+}
+
+#button{
+	border: solid black;
+	border-width: 3px;
+	margin-left: 455px;
+	background-color: green;
+	height: 30px;
+	width: 55px;
+	color: white;
+	font-size: 16px;
+	box-shadow: 2px 5px black;
+}
+
+#new_course{
+	margin-bottom: 40px;
+}
+
+thead {
+	font-size: 18px;
+	font-weight: normal;
+	border: 1px solid black;
+	background-color: silver;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;
+}
+
+table {
+	border-bottom: 1px solid black;
+	border-collapse: collapse;
+}
+
+tr {
+	padding-bottom: 10em;
+}
+
+th, td {
+	padding: 5px 15px;
+}
+
+table td, th {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+#cname{
+	column-width: 600px;
+}
+
+#created{
+	column-width: 375px;
+}

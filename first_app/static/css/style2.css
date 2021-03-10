@@ -1,0 +1,42 @@
+body {
+	padding: 100px;
+}
+#wrapper {
+	margin: auto;
+	width: 1000px;
+	font-family: Geneva, Verdana, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+}
+.desc {
+	padding-left: 100px;
+}
+td {
+	font-size: 21px;
+}
+
+#table {
+	margin-bottom: 50px;
+}
+
+.button {
+	height: 30px;
+	box-shadow: 2px 5px black;
+	border: solid black;
+	border-width: 3px;
+	font-size: 18px;
+	display: inline-block;
+
+}
+
+#redb {
+	background-color: #990000;
+	color: white;
+	width: 300px;
+	margin-left: 20px;
+}
+.buttons{
+	display: inline-block;
+}
+
+#select{
+	margin-left: 200px;
+}

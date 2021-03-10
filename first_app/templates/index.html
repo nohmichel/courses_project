@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+ 	<div id="wrapper">
+ 		<div id="new_course">
+	 		<form action="/new_course" method="POST">
+	 			{% csrf_token %}
+		 		<h2>Add a new course</h2>
+		 		{% if messages %}
+				<ul class="messages">    
+				    {% for message in messages %}    
+				        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+				    {% endfor %}
+				</ul>
+				{% endif %}		
+		 		<p><label for="name">Name:</label>
+		 		<input type="text" id="name" name="name"></p>
+		 		
+		 		<p><label for="description" class="
+		 			desc">Description: </label>
+		 		<textarea type="textarea" class="desc" name="description" rows="10" cols="50"></textarea></p>
+		 		<p><input type="submit" id="button" value="Add" name="button"></p>
+		 		</form>
+	 	</div>
+
+	 	<div id="courses">
+	 		<h3>Courses</h3>
+	 		<table>
+				<thead>
+					<tr>
+						<th>Course Name</th>
+						<th>Description</th>
+						<th>Date Added</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for one_course in all_courses %}
+					<tr>	
+						<td id="cname">{{one_course.name}}</td>
+						<td id="cdesc">{{one_course.description}}</td>
+						<td id="created">{{one_course.created_at}}</td>
+						<td><a href="{% url 'destroy' course_id=one_course.id %}">remove</a></td>
+						{% endfor %}
+					</tr>
+					</tbody>		
+	 		</table>	
+	 	</div>	
+	 		
+</body>
+</html>
